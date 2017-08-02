@@ -9,7 +9,6 @@ import sys
 import random
 import time 
 
-
 options = ['Exit', 'Fibonacci', 'Factorial', 'Quicksort', 'Binary Search']
 selection = 0
 
@@ -77,9 +76,13 @@ def cls():
 
 #ComputeFactorial(): Helper function for Factorial() that takes an integer as an argument and then computes the factorial of this number. 
 def ComputeFactorial(int):
+	#create a var to hold initial value of 'int'
 	px = int
+	#loop from the value of 'int' backward by decrementing the value by -1 on each iteration
 	for i in range(int-1, 0, -1):
+		#set 'px' to the value of 'px' multiplied by the current value of 'i'
 		px = px * i
+	#return px
 	return px
 
 #Factorial(): Asks the user for a number to calculate the factorial of, calls the helper function ComputeFactorial() and then prints out 
@@ -87,14 +90,16 @@ def ComputeFactorial(int):
 def Factorial():
 	cls()
 	print("* Factorial *")
+	#ask user to enter a positive integer 
 	inp = int(input("Please enter a number > 0 and press enter: "))
 	print("Computing...")
+	#print out the series of integers used in the factorial
 	for i in range(inp, 0, -1):
 		if i == 1:
 			sys.stdout.write(str(i))
 		else:
 			sys.stdout.write(str(i)+" * ")
-			
+	#finally print out the calculated Factorial. 
 	else:
 		print(" = "+str(ComputeFactorial(inp)))
 	if Repeat("Factorial"):
@@ -105,16 +110,21 @@ def Factorial():
 #ComputeFibonacci(): Helper function for Fibonacci() that takes an integer as an argument and then computes the fibonacci sequence up to the 
 #entered value.		
 def ComputeFibonacci(int):
+	#vars
 	f = 0
 	s = 1
 	out = ""
+	#for loop, loop between 0 and the value of 'int'
 	for i in range(0, int):
+		#if i <=1 then 'n' is equal to i (useful in first few cases)
 		if i <= 1:
 			n = i
+		#else 'n' is equal to 'f' plus 's', then set the value of 'f' to 's' and 's' to 'n'
 		else:
 			n = f + s
 			f = s
 			s = n
+		#escape clause to print a '.' instead of a ',' for the final case
 		if i  == int-1:
 			out = out + str(n) + "."
 		else:
@@ -126,8 +136,10 @@ def ComputeFibonacci(int):
 def Fibonacci():
 	cls()
 	print("* Fibonacci *")
+	#Ask user to enter an integer for the number of steps they wish to calculate
 	inp = int(input("Please enter the number of Fibonacci steps to compute and press enter: "))
 	print("Computing...")
+	#Call the helper function and pass the user entered value as an argument
 	ComputeFibonacci(inp)
 	if Repeat("Fibonacci"):
 		Fibonacci()
