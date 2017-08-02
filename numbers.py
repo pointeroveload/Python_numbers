@@ -1,8 +1,6 @@
 #Numbers.py - Tom Weaver
-#
-#	To run this application, hold shift + right-click and select "open command prompt here"
-#	Then type in "py numbers.py" (without quotation marks) and press enter. 
-#
+#	Simple application showing Factorial, Fibonacci, Binary Search and Quick Sort algorithms in Python. 
+#	Uses Python 3+ so may cause problems with 2.7, license free, do with it as you please. 
 #
 import os
 import sys
